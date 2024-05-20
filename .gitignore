@@ -1,0 +1,17 @@
+**/target/**
+**/.idea/**
+*.iml
+*.db
+*.out
+logs/**
+
+**/node_modules
+**/.pnp
+**.pnp.js
+
+# testing
+**/coverage
+apphub-integration/error_report/**
+
+# production
+**/build
