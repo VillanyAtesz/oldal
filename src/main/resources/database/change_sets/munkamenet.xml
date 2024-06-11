@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="munkamenet-tabla-letrehozasa" author="atesz">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="munkamenet"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="munkamenet">
+            <column name="id" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="felhasznalo_id" type="text"/>
+            <column name="lejarat" type="text"/>
+        </createTable>
+
+        <addPrimaryKey tableName="munkamenet" columnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

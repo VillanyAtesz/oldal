@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="szerszam_keszlet-tabla-letrehozasa" author="atesz">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="szerszam_keszlet"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="szerszam_keszlet">
+            <column name="id" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="szerszam_tipus" type="text"/>
+            <column name="marka" type="text"/>
+            <column name="megnevezes" type="text"/>
+            <column name="ar" type="integer"/>
+            <column name="megjegyzes" type="text"/>
+        </createTable>
+
+        <addPrimaryKey tableName="szerszam_keszlet" columnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

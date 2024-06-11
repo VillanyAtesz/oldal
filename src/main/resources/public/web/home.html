@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kezdőlap - VillanyAtesz</title>
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<div class="home-container">
+  <div>
+    <h1>Üdvözöljük!</h1>
+    <p>Sikeresen bejelentkezett.</p>
+    <button onclick="kijelentkezes()">Kijelentkezés</button>
+  </div>
+</div>
+
+<script>
+  function loadNavbar() {
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      });
+  }
+
+  function kijelentkezes() {
+      // Itt történik a kijelentkezési logika
+      alert('Kijelentkezés sikeres!');
+      window.location.href = "/index.html";  // Visszairányítás a bejelentkezési oldalra
+  }
+
+  // Betöltjük a navigációs sávot amikor az oldal betöltődik
+  document.addEventListener('DOMContentLoaded', loadNavbar);
+</script>
+
+</body>
+</html>
+
+
+<script>
+  function kijelentkezes() {
+      // Itt történik a kijelentkezési logika
+      alert('Kijelentkezés sikeres!');
+      window.location.href = "/index.html";  // Visszairányítás a bejelentkezési oldalra
+  }
+</script>
+
+</body>
+</html>
+

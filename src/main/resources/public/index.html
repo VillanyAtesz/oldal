@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/res/kozos/dao.js"></script>
+    <script src="/res/index/index.js"></script>
+
+    <title>Kezdőlap - VillanyAtesz</title>
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<div class="home-container">
+    <div>
+        <input type="text" id="felhasznalonev" />
+        <input type="password" id="jelszo" />
+        <button onclick="bejelentkezes()">Bejelentkezés</button>
+    </div>
+</div>
+
+<script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+        });
+    }
+</script>
+
+</body>
+</html>

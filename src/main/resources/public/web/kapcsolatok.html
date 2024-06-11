@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolatok - VillanyAtesz</title>
+    <link rel="stylesheet" href="web/Styles/styles.css">
+</head>
+<body>
+<div id="navbar-container"></div>
+
+<div class="home-container">
+    <div>
+        <h1>Kapcsolatok</h1>
+        <p>Üdvözöljük a Kapcsolatok oldalon. Ide jönnek majd a kapcsolatokkal kapcsolatos információk.</p>
+    </div>
+</div>
+
+<script>
+    function loadNavbar() {
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    }
+</script>
+</body>
+</html>

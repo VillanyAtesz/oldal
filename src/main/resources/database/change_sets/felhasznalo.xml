@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="felhasznalo-tabla-letrehozasa" author="atesz">
+        <!-- Adatbázis tábla létrehozása -->
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="felhasznalo"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="felhasznalo">
+            <column name="id" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="felhasznalonev" type="text"/>
+            <column name="jelszo" type="text"/>
+        </createTable>
+
+        <addPrimaryKey tableName="felhasznalo" columnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
